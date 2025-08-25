@@ -47,8 +47,8 @@ class CoordCli(Node):
             if lon2 is None: break
 
             msg = Float32MultiArray()
-            # Cast to float32-compatible Python floats
-            msg.data = [float(lat1), float(lon1), float(lat2), float(lon2)]
+            
+            msg.data = [lat1, lon1, lat2, lon2]
             self.pub.publish(msg)
             print(f"→ Published to /coords_in: {msg.data}\n")
 
